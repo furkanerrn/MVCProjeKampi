@@ -4,4 +4,4 @@
 1. James Madison
 2. James Monroe
 3. John Quincy Adams
-4. @octocat :+1: This PR looks great - it's ready to merge! :shipit:
+4. @octocat :+1: Birinci sertifika görevi tamamlandı :shipit:
