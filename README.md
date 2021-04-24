@@ -1,6 +1,6 @@
 # MVC KAMPI 
 **Bu proje Murat Yücedağ'ın MVC yazılım kampı konularına paralel olarak geliştirilmektedir **
-**Eğitime erişmek için  [tıklayın](https://bit.ly/3vb6M8Y/). **
+**Eğitime erişmek için  [tıklayın](bit.ly/3vb6M8Ybit.ly/3vb6M8Y/). **
 
 
   :+1: Birinci sertifika görevi tamamlandı :shipit:
