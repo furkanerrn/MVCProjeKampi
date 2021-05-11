@@ -9,3 +9,5 @@
 1. Ana Katmanlar oluşturuldu (Business,Entity,Data Access)
 2. Business ve Data Access katmanlarına Entity Framework desteği eklendi
 3. Veritabanı desteği eklendi ve gerekli entegrasyonlar yapıldı.
+
+ :+1: iKinci sertifika görevi tamamlandı :shipit:
