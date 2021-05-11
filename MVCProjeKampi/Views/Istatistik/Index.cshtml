@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<br />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h1> İstatistikler</h1>
+<br />
+
+<div class="card-deck">
+    <div class="card text-blue bg-secondary col-md-4"  style="max-width: 35rem";>
+        <div class="card-header">@ViewBag.q1</div>
+        <div class="card-body">
+            <h2 class="card-title">TOPLAM KATEGORİ SAYISI</h2>
+            <p class="card-text"></p>
+        </div>
+    </div>
+    <div class="card text-capitalize bg-success col-md-4" style="max-width: 30rem;">
+        <div class="card-header">@ViewBag.q2</div>
+        <div class="card-body">
+            <h2 class="card-title">YAZILIM ALANINA AİT BAŞLIK SAYISI </h2>
+            <p class="card-text"></p>
+        </div>
+    </div>
+    <div class="card text-white bg-danger col-md-4" style="max-width: 30rem;">
+        <div class="card-header">@ViewBag.q3</div>
+        <div class="card-body">
+            <h2 class="card-title">ADINDA "a" HARFİ BULUNAN YAZAR SAYISI</h2>
+            <p class="card-text"></p>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<div class="card-deck">
+    <div class="card text-dark bg-warning col-md-6" style="max-width: 38rem;">
+        <div class="card-header">@ViewBag.q4</div>
+        <div class="card-body">
+            <h2 class="card-title">EN ÇOK BAĞLIĞA SAHİP KATEGORİ</h2>
+        </div>
+    </div>
+    <div class="card text-dark bg-gradient-light col-md-6" style="max-width: 38rem;">
+        <div class="card-header">@ViewBag.q5</div>
+        <div class="card-body">
+            <h5 class="card-title">CATEGORY STATUS U TRUE OLANLARLA FALSE OLANLAR ARASINDAKİ MUTLAK FARK</h5>
+            <p class="card-text"></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--<th>Yazılım alanına ait başlık sayısı</th>
+<th> Adında a harfi bulunan kişi sayısı</th>
+<th> En çok başlığa sahip kategori adı</th>
+<th>Categorystatus'u true olanlarla false olanlar arasıdaki fark</th>
+
+
+
+
+<td>@ViewBag.q1</td>
+<td>@ViewBag.q2</td>
+<td>@ViewBag.q3</td>
+<td>@ViewBag.q4</td>-->
+        @*<td>@ViewBag.q5</td>*@
+
+
+
+
+
+
+@*<td>@item.CategoryId</td>
+    <td>@item.CategoryName</td>
+    <td><a href="/AdminCategory/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+    <td><a href="/AdminCategory/EditCategory/@item.CategoryId" class="btn btn-warning">Güncelle</a></td>
+    <td><a href="#" class="btn btn-primary">Başlıklar</a></td>*@
