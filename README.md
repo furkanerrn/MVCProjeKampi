@@ -16,4 +16,4 @@
  3. İstatistik sayfasının ekran görüntüsü  Github reposu içine eklendi. 
  4. Form dolduruldu.
  
- ![SertifikaGörev (2)](https://user-images.githubusercontent.com/63072856/117955275-8e244880-b320-11eb-821c-6fca60b86854.png)
+![image_2021-05-12_125550](https://user-images.githubusercontent.com/63072856/117956080-61bcfc00-b321-11eb-8f39-12a4933689a1.png)
