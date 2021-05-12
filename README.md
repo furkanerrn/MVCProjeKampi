@@ -11,3 +11,6 @@
 3. Veritabanı desteği eklendi ve gerekli entegrasyonlar yapıldı.
 
  :+1: iKinci sertifika görevi tamamlandı :shipit:
+ 
+ 
+![alt text](C:\Users\Furkan Eren\Pictures\Screenshots)
