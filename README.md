@@ -13,4 +13,4 @@
  :+1: iKinci sertifika görevi tamamlandı :shipit:
  
  
-![alt text](https://github.com/[furkanerrn]/[MVCProjeKampi]/blob/[master]/SertifikaGörev.png?raw=true)
+![SertifikaGörev](https://github.com/[furkanerrn]/[MVCProjeKampi]/blob/[master]/SertifikaGörev.png?raw=true)
