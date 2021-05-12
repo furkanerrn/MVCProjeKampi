@@ -10,7 +10,11 @@
 2. Business ve Data Access katmanlarına Entity Framework desteği eklendi
 3. Veritabanı desteği eklendi ve gerekli entegrasyonlar yapıldı.
 
- :+1: iKinci sertifika görevi tamamlandı :shipit:
+  :+1: ikinci sertifika görevi tamamlandı :shipit:
+ 1. Mevcut Github Reposu güncellendi.
+ 2. İstenen 5 sorgu "istatistik" isminde bir controller içine yazıldı.
+ 3. İstatistik sayfasının ekran görüntüsü  Github reposu içine eklendi. 
+ 4. Form dolduruldu.
  
  
 ![SertifikaGörev](https://user-images.githubusercontent.com/63072856/117954564-cf682880-b31f-11eb-9197-56e66913c81d.png)
