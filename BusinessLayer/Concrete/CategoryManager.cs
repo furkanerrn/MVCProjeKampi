@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
             _categorydal = categorydal;
         }
 
-        public void CategorUpdate(Category category)
+        public void CategoryUpdate(Category category)
         {
             _categorydal.Update(category);
         }

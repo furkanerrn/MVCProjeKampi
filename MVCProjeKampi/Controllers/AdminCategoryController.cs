@@ -55,14 +55,14 @@ namespace MVCProjeKampi.Controllers
         public ActionResult EditCategory(int id)
         {
             var categoryValue = cm.GetById(id);
-            cm.CategorUpdate(categoryValue);
+         
             return View(categoryValue);
         }
 
         [HttpPost]
-        public ActionResult UpdateCategory(Category category)
+        public ActionResult EditCategory(Category category)
         {
-            cm.CategorUpdate(category);
+            cm.CategoryUpdate(category);
             return RedirectToAction("Index");
         }
     }

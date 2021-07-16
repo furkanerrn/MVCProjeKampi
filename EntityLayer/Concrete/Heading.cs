@@ -22,12 +22,14 @@ namespace EntityLayer.Concrete
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
 
+        public bool HeadingStatus { get; set; }
+
 
         //Writer sınıfıyla bağlantı
         public int WriterId { get; set; }
         public virtual  Writer Writer { get; set; } 
 
-        public ICollection<Content> Contents { get; set; }
+        public ICollection<Content> Contents { get; set; } //sonradan category content writer heading
 
     }
 }
