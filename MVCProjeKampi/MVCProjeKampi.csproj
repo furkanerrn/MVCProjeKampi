@@ -2302,7 +2302,7 @@
     <Content Include="Views\Message\Inbox.cshtml" />
     <Content Include="Views\Message\SendBox.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
-    <Content Include="Views\Message\GetTrash.cshtml" />
+    <Content Include="Views\Message\GetDraftMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

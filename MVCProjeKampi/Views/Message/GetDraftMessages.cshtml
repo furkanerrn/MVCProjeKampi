@@ -1,7 +1,7 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 @{
-    ViewBag.Title = "SendBox";
+    ViewBag.Title = "GetDraftMessages";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
 }
 
@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Gelen Sayfası</h1>
+                    <h1>Gelen  Sayfası</h1>
                 </div>
 
             </div>
@@ -31,8 +31,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gönderilen Mailler</h3>
-                        
+                        <h3 class="card-title">Taslaklar</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Maillerde ara">
@@ -47,46 +46,6 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
-                        <div class="mailbox-controls">
-                        
-                            <div class="float-right">
-                                1-50/200
-                                
-                                <!-- /.btn-group -->
-                            </div>
-                            <!-- /.float-right -->
-                        </div>
-                        <div class="table-responsive mailbox-messages">
-                            <table class="table table-hover table-striped">
-                                <tbody>
-                                    
-                                    @foreach (var item in Model)
-                                    {
-                                    
-                                        <tr>
-                                            <td>
-                                                <div class="icheck-primary">
-                                                    <input type="checkbox" value="" id="check1">
-                                                    <label for="check1"></label>
-                                                </div>
-                                            </td>
-                                            <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.MessageId">@item.ReceiverMail</a></td>
-                                            <td class="mailbox-subject">
-                                                <b>( @item.Subject )</b> @item.MessageContent ...
-                                            </td>
-                                            <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">@item.MessageDate</td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                            <!-- /.table -->
-                        </div>
-                        <!-- /.mail-box-messages -->
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer p-0">
                         <div class="mailbox-controls">
                             <!-- Check all button -->
                             <button type="button" class="btn btn-default btn-sm checkbox-toggle">
@@ -109,6 +68,35 @@
                             </div>
                             <!-- /.float-right -->
                         </div>
+                        <div class="table-responsive mailbox-messages">
+                            <table class="table table-hover table-striped">
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="icheck-primary">
+                                                    <input type="checkbox" value="" id="check1">
+                                                    <label for="check1"></label>
+                                                </div>
+                                            </td>
+                                            <td class="mailbox-star"><a href="/Message/GetDraftMessages/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/Message/GetDraftMessages/@item.MessageId">@item.SenderMail</a></td>
+                                            <td class="mailbox-subject">
+                                                <b>( @item.Subject )</b> @item.MessageContent
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">@item.MessageDate</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <!-- /.table -->
+                        </div>
+                        <!-- /.mail-box-messages -->
+                    </div>
+                    <!-- /.card-body -->
+                    
                     </div>
                 </div>
                 <!-- /.card -->
@@ -120,4 +108,6 @@
 
 </body>
 </html>
+
+
 
