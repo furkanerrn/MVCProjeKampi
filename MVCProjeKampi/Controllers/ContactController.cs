@@ -35,6 +35,9 @@ namespace MVCProjeKampi.Controllers
             var receiverMail = mm.GetListInBox().Count();
             ViewBag.receiverMail = receiverMail;
 
+            var taslak = mm.IsDraft().Count();
+            ViewBag.taslak = taslak;
+
             return PartialView();
         }
 

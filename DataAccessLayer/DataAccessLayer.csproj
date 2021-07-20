@@ -52,10 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDAL.cs" />
+    <Compile Include="Abstract\IAdminDAL.cs" />
     <Compile Include="Abstract\ICategoryDAL.cs" />
     <Compile Include="Abstract\IContactDAL.cs" />
     <Compile Include="Abstract\IContentDAL.cs" />
     <Compile Include="Abstract\IHeadingDAL.cs" />
+    <Compile Include="Abstract\IImageFileDAL.cs" />
     <Compile Include="Abstract\IMessageDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
@@ -63,10 +65,12 @@
     <Compile Include="Concrete\Repositories\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDAL.cs" />
+    <Compile Include="EntityFramework\EfAdminDAL.cs" />
     <Compile Include="EntityFramework\EfCategoryDAL.cs" />
     <Compile Include="EntityFramework\EfContactDAL.cs" />
     <Compile Include="EntityFramework\EfContentDAL.cs" />
     <Compile Include="EntityFramework\EfHeadingDAL.cs" />
+    <Compile Include="EntityFramework\EFImageFileDAL.cs" />
     <Compile Include="EntityFramework\EFMessageDAL.cs" />
     <Compile Include="EntityFramework\EfWriterDAL.cs" />
     <Compile Include="Migrations\202105241359297_mig_writer_title_add.cs" />
@@ -100,6 +104,18 @@
     <Compile Include="Migrations\202107161352179_Message_IsTrash_Added.cs" />
     <Compile Include="Migrations\202107161352179_Message_IsTrash_Added.designer.cs">
       <DependentUpon>202107161352179_Message_IsTrash_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107171209206_Contactdate_added.cs" />
+    <Compile Include="Migrations\202107171209206_Contactdate_added.designer.cs">
+      <DependentUpon>202107171209206_Contactdate_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107181856019_ImagePath.cs" />
+    <Compile Include="Migrations\202107181856019_ImagePath.designer.cs">
+      <DependentUpon>202107181856019_ImagePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107191538016_admin_add.cs" />
+    <Compile Include="Migrations\202107191538016_admin_add.designer.cs">
+      <DependentUpon>202107191538016_admin_add.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +154,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107161352179_Message_IsTrash_Added.resx">
       <DependentUpon>202107161352179_Message_IsTrash_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107171209206_Contactdate_added.resx">
+      <DependentUpon>202107171209206_Contactdate_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107181856019_ImagePath.resx">
+      <DependentUpon>202107181856019_ImagePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107191538016_admin_add.resx">
+      <DependentUpon>202107191538016_admin_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

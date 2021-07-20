@@ -49,9 +49,9 @@ namespace BusinessLayer.Concrete
             return _messageDAL.List(x=>x.SenderMail=="admin@gmail.com");
         }
 
-        public List<Message> IsDraft(string sendermail)
+        public List<Message> IsDraft()
         {
-            return _messageDAL.List(x => x.IsTrash == true && x.SenderMail==sendermail);
+            return _messageDAL.List(x => x.IsTrash == true && x.SenderMail=="admin@gmail.com");
         }
 
        

@@ -18,5 +18,9 @@ namespace DataAccessLayer.Concrete.Repositories
         public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<Message> Messages { get; set; }
+
+        public DbSet<ImageFile> ImageFiles { get; set; }
+
+        public DbSet<Admin> Admins  { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace BusinessLayer.Abstract
         List<Message> GetListInBox();
         List<Message> GetListSendBox();
 
-        List<Message> IsDraft(string sendermail);
+        List<Message> IsDraft();
         void MessageAdd(Message message);
         void MessageDelete(Message message);
         void MessageUpdate(Message message);

@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Gelen Sayfası</h1>
+                    <h1>İletişim Sayfası</h1>
                 </div>
                
             </div>
@@ -86,7 +86,7 @@
                                             <b>( @item.Subject )</b> @item.Message ..
                                         </td>
                                         <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date">5 mins ago</td>
+                                        <td class="mailbox-date">@item.ContactDate.ToString("dd-MMM-yyyy")</td>
                                     </tr>
                                     }
                                 </tbody>
