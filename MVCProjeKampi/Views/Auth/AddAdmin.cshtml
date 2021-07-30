@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Dto.AdminDto
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<h2>Admin Ekleme Paneli</h2>
+@using(Html.BeginForm("AddAdmin","Auth",FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+   
+
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+   
+
+    @Html.Label("Rol")
+    @Html.TextBoxFor(x => x.RoleId, new { @class = "form-control" })
+
+    <button class="btn-danger">Kaydet</button>
+
+</div>   
+       
+
+}
+       

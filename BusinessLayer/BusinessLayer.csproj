@@ -54,8 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAuthService2.cs" />
     <Compile Include="Abstract\IAboutService.cs" />
-    <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\IAdminService2.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\IContentService.cs" />
@@ -64,7 +65,8 @@
     <Compile Include="Abstract\IMessageService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
-    <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\AdminManager2.cs" />
+    <Compile Include="Concrete\AuthManager2.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\ContentManager.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Concrete\MessageManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Security\Hashing\HashingHelper.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
     <Compile Include="ValidationRules\ContactValidator.cs" />
     <Compile Include="ValidationRules\MessageValidator.cs" />

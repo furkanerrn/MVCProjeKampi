@@ -22,5 +22,9 @@ namespace DataAccessLayer.Concrete.Repositories
         public DbSet<ImageFile> ImageFiles { get; set; }
 
         public DbSet<Admin> Admins  { get; set; }
+
+        public DbSet<Admin2> Admins2 { get; set; }
+
+        public DbSet<Role> Roles { get; set; }
     }
 }

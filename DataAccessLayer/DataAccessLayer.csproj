@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDAL.cs" />
-    <Compile Include="Abstract\IAdminDAL.cs" />
+    <Compile Include="Abstract\IAdminDAL2.cs" />
     <Compile Include="Abstract\ICategoryDAL.cs" />
     <Compile Include="Abstract\IContactDAL.cs" />
     <Compile Include="Abstract\IContentDAL.cs" />
@@ -65,7 +65,7 @@
     <Compile Include="Concrete\Repositories\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDAL.cs" />
-    <Compile Include="EntityFramework\EfAdminDAL.cs" />
+    <Compile Include="EntityFramework\EFAdminDAL2.cs" />
     <Compile Include="EntityFramework\EfCategoryDAL.cs" />
     <Compile Include="EntityFramework\EfContactDAL.cs" />
     <Compile Include="EntityFramework\EfContentDAL.cs" />
@@ -117,6 +117,14 @@
     <Compile Include="Migrations\202107191538016_admin_add.designer.cs">
       <DependentUpon>202107191538016_admin_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107231357507_hash.cs" />
+    <Compile Include="Migrations\202107231357507_hash.designer.cs">
+      <DependentUpon>202107231357507_hash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107241617457_add_admin2.cs" />
+    <Compile Include="Migrations\202107241617457_add_admin2.designer.cs">
+      <DependentUpon>202107241617457_add_admin2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -163,6 +171,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107191538016_admin_add.resx">
       <DependentUpon>202107191538016_admin_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107231357507_hash.resx">
+      <DependentUpon>202107231357507_hash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107241617457_add_admin2.resx">
+      <DependentUpon>202107241617457_add_admin2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
