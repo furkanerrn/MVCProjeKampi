@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\About.cs" />
     <Compile Include="Concrete\Admin.cs" />
     <Compile Include="Concrete\Admin2.cs" />
@@ -61,13 +62,13 @@
     <Compile Include="Concrete\ImageFile.cs" />
     <Compile Include="Concrete\Message.cs" />
     <Compile Include="Concrete\Role.cs" />
+    <Compile Include="Concrete\Skill.cs" />
+    <Compile Include="Concrete\TalentSkillCard.cs" />
     <Compile Include="Concrete\Writer.cs" />
     <Compile Include="Dto\AdminDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstract\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

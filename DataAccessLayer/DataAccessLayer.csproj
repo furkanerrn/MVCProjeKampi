@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IImageFileDAL.cs" />
     <Compile Include="Abstract\IMessageDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ISkillDAL.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\Context.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="EntityFramework\EfHeadingDAL.cs" />
     <Compile Include="EntityFramework\EFImageFileDAL.cs" />
     <Compile Include="EntityFramework\EFMessageDAL.cs" />
+    <Compile Include="EntityFramework\EFSkillDAL.cs" />
     <Compile Include="EntityFramework\EfWriterDAL.cs" />
     <Compile Include="Migrations\202105241359297_mig_writer_title_add.cs" />
     <Compile Include="Migrations\202105241359297_mig_writer_title_add.designer.cs">
@@ -125,6 +127,18 @@
     <Compile Include="Migrations\202107241617457_add_admin2.designer.cs">
       <DependentUpon>202107241617457_add_admin2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107311245164_skills_added.cs" />
+    <Compile Include="Migrations\202107311245164_skills_added.designer.cs">
+      <DependentUpon>202107311245164_skills_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107311248276_talent_skill_card_added.cs" />
+    <Compile Include="Migrations\202107311248276_talent_skill_card_added.designer.cs">
+      <DependentUpon>202107311248276_talent_skill_card_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107311336534_skill_updated.cs" />
+    <Compile Include="Migrations\202107311336534_skill_updated.designer.cs">
+      <DependentUpon>202107311336534_skill_updated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -177,6 +191,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107241617457_add_admin2.resx">
       <DependentUpon>202107241617457_add_admin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107311245164_skills_added.resx">
+      <DependentUpon>202107311245164_skills_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107311248276_talent_skill_card_added.resx">
+      <DependentUpon>202107311248276_talent_skill_card_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107311336534_skill_updated.resx">
+      <DependentUpon>202107311336534_skill_updated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

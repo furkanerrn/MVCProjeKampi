@@ -26,5 +26,7 @@ namespace DataAccessLayer.Concrete.Repositories
         public DbSet<Admin2> Admins2 { get; set; }
 
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<TalentSkillCard> talentSkillCards { get; set; }
     }
 }
