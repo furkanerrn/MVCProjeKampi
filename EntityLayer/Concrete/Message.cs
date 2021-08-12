@@ -18,5 +18,7 @@ namespace EntityLayer.Concrete
 
         public bool IsTrash { get; set; }
 
+        public bool IsRead { get; set; }
+
     }
 }

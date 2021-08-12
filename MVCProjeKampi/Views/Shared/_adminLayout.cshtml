@@ -55,7 +55,7 @@ to get the desired effect
                         <img src="~/AdminLTE-3.0.4/dist/img/Foto.png" class="img-circle elevation-2" alt="User Image">@*ekleme*@
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Furkan Eren</a>
+                        <a href="/Skill/Index" class="d-block">Furkan Eren</a>
                     </div>
                 </div>
 
@@ -63,27 +63,27 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
+         with font-awesome or any other icon font library -->
                         @if (User.IsInRole("B"))
-                         {
+                        {
 
-                         
-                        <li class="nav-item has-treeview ">
-                            <a href="/AdminCategory/Index" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Kategoriler
-                                    
-                                </p>
-                            </a>
-                        </li>
+
+                            <li class="nav-item has-treeview ">
+                                <a href="/AdminCategory/Index" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Kategoriler
+
+                                    </p>
+                                </a>
+                            </li>
                         }
                         <li class="nav-item">
                             <a href="/Heading/Index" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Başlıklar
-                                  
+
                                 </p>
                             </a>
                         </li>
@@ -91,8 +91,8 @@ to get the desired effect
                             <a href="/Writer/Index" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
-                                  Yazarlar
-                                   
+                                    Yazarlar
+
                                 </p>
                             </a>
                         </li>
@@ -130,7 +130,7 @@ to get the desired effect
                                 <i class="nav-icon fas fa-tree"></i>
                                 <p>
                                     Hakkımızda
-                                  
+
                                 </p>
                             </a>
                         </li>
@@ -139,13 +139,13 @@ to get the desired effect
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
 
-                                   İletişim ve Mesajlar
-                                   
+                                    İletişim ve Mesajlar
+
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            
+
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="pages/tables/simple.html" class="nav-link">
@@ -167,13 +167,23 @@ to get the desired effect
                                 </li>
                             </ul>
                         </li>
-                      
+
                         <li class="nav-item">
                             <a href="pages/calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
-                                   Yetkilendirme
-                                    
+                                    Yetkilendirme
+
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="/Skill/Index" class="nav-link">
+                                <i class="nav-icon fas fa-book-reader "></i>
+                                <p>
+                                   Yeteneklerim
+                                    <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                         </li>
@@ -189,7 +199,7 @@ to get the desired effect
                             <a href="/ErrorPage/Page404" class="nav-link">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
-                                   Hata Sayfaları
+                                    Hata Sayfaları
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -198,8 +208,8 @@ to get the desired effect
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
-                                   Siteye git
-                                   
+                                    Siteye git
+
                                 </p>
                             </a>
                         </li>
@@ -208,11 +218,11 @@ to get the desired effect
                                 <i class="nav-icon fas fa-apple-alt"></i>
                                 <p>
                                     Çıkış yap
-                                    
+
                                 </p>
                             </a>
                         </li>
-                      
+
                     </ul>
                 </nav>
                

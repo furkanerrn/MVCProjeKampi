@@ -123,9 +123,9 @@
                                     <span class="badge badge-danger">Pasif</span>
                                 }
                             </td>
-                            <td class="project-state">
-                                <span class="@color">@item.Category.CategoryName</span>
-                            </td>
+                                <td class="project-state">
+                                    <span class="@color">@item.Category.CategoryName</span>
+                                </td>
                             <td class="project-actions text-right">
                                 <a class="btn btn-primary btn-sm" href="/Content/ContentbyHeading/@item.HeadingId">
                                     <i class="fas fa-folder">
@@ -143,22 +143,24 @@
                                     Sil
                                 </a>
                                 <br />
-                            <a class="project-actions text-right">
-                                @if (item.HeadingStatus == true)
-                                {
-                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
-                                        <i class="fas fa-trash"></i>
-                                        Pasifleştir
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a class="btn btn-success btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
-                                        <i class="fas fa-trash"></i>
-                                        Aktifleştir
-                                    </a>
-                                }
-                            </a>
+
+                                <a class="project-actions text-right">
+                                    @if (item.HeadingStatus == true)
+                                    {
+                                        <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
+                                            <i class="fas fa-trash"></i>
+                                            Pasifleştir
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-success btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
+                                            <i class="fas fa-trash"></i>
+                                            Aktifleştir
+                                        </a>
+                                    }
+                                </a>
+
                             </td>
                         </tr>
                     }

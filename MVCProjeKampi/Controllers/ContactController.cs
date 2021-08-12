@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.Repositories;
 using DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace MVCProjeKampi.Controllers
     {
         ContactManager cm = new ContactManager(new EfContactDAL());
         MessageManager mm = new MessageManager(new EFMessageDAL());
+        Context c = new Context();
         public ActionResult Index()
         {
             var contactValues = cm.GetList();
@@ -37,6 +39,12 @@ namespace MVCProjeKampi.Controllers
 
             var taslak = mm.IsDraft().Count();
             ViewBag.taslak = taslak;
+
+            var values = c.Messages.Count(x => x.IsRead == false && x.ReceiverMail == "admin@gmail.com");
+            ViewBag.values = values;
+
+            var values2 = c.Messages.Count(x => x.IsRead == true && x.ReceiverMail == "admin@gmail.com");
+            ViewBag.values2 = values2;
 
             return PartialView();
         }

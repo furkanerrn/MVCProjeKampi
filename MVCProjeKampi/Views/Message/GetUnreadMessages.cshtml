@@ -1,13 +1,8 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 @{
-    ViewBag.Title = "Inbox";
+    ViewBag.Title = "GetUnreadMessages";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
-}
-@{
-    string message = "";
-    string color = "";
-    string icon = "";
 }
 
 <!DOCTYPE html>
@@ -31,13 +26,12 @@
     <section class="content">
         <div class="row">
 
-
             @Html.Action("ContactPartial", "Contact")
 
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gelen Mailler</h3>
+                        <h3 class="card-title">Okunmayan Mailler</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Maillerde ara">
@@ -52,61 +46,27 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
-                        <div class="mailbox-controls">
-                            <!-- Check all button -->
-                            
-                            <div class="float-right">
-                                1-50/200
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                </div>
-                                <!-- /.btn-group -->
-                            </div>
-                            <!-- /.float-right -->
-                        </div>
+                       
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        if (item.IsRead == false)
-                                        {
-                                            message = "Okunmadı";
-                                            color = "btn btn-danger-sm";
-                                            icon = "fas fa-envelope";
-                                        }
-                                        if (item.IsRead == true)
-                                        {
-                                            message = "Okundu";
-                                            color = "btn btn-danger-sm";
-                                            icon="fas fa-envelope-open";
-                                        }
-
-
-                                    <tr>
-                                        <td>
-                                            <div class="icheck-primary">
-                                                <input type="checkbox" value="" id="check1">
-                                                <label for="check1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a title="@message">
-                                                <i class="@icon"></i>
-                                                <i class="@color"></i>
-                                            </a>
-                                        </td>
-                                        <td class="mailbox-star"><a href="/Message/GetInboxMessagesDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
-                                        <td class="mailbox-name"><a href="/Message/GetInboxMessagesDetails/@item.MessageId">Gönderici :@item.SenderMail</a></td>
-                                        <td class="mailbox-subject">
-
-                                            <b>( @item.Subject )</b> @item.MessageContent
-                                        </td>
-                                       
-                                        <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date">@item.MessageDate.ToShortDateString()</td>
-                                    </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="icheck-primary">
+                                                    <input type="checkbox" value="" id="check1">
+                                                    <label for="check1"></label>
+                                                </div>
+                                            </td>
+                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">Gönderici :@item.SenderMail</a></td>
+                                            <td class="mailbox-subject">
+                                                <b>( @item.Subject )</b> @item.MessageContent
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">@item.MessageDate.ToShortDateString()</td>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>
@@ -138,6 +98,7 @@
                             </div>
                             <!-- /.float-right -->
                         </div>
+                        Toplam Sonuç : @Model.Count
                     </div>
                 </div>
                 <!-- /.card -->
@@ -149,5 +110,4 @@
 
 </body>
 </html>
-
 

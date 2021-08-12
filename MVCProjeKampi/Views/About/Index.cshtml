@@ -10,18 +10,35 @@
     <tr>
         <th>ID</th>
         <th>Hakkımda Yazısı</th>
-        <th>Aktifleştir</th>
-        <th>Pasifleştir</th>
+        <th>Aktiflik Durumu</th>
+        
     </tr>
     @foreach (var item in Model)
     {
 
-    <tr>
-       <td>@item.AboutId</td>
-       <td>Başlık</td>
-       <td><a  href="#" class="btn btn-success">Aktifleştir</a></td>
-       <td><a  href="#" class="btn btn-danger"> Pasifleştir</a></td>
-    </tr>
+<tr>
+    <td>@item.AboutId</td>
+    <td>@item.AboutDetails1</td>
+    <td>
+    <a class="project-actions text-right">
+    @if (item.IsActive == true)
+    {
+        <a class="btn btn-danger btn-sm" href="/About/DeleteAbout/@item.AboutId">
+            <i class="fas fa-trash"></i>
+            Pasif Yap
+        </a>
+    }
+    else
+    {
+        <a class="btn btn-success btn-sm" href="/About/DeleteAbout/@item.AboutId">
+            <i class="fas fa-trash"></i>
+            Aktif Yap
+        </a>
+    }
+</a>
+    </td>
+    
+</tr>
 
     }
 </table>

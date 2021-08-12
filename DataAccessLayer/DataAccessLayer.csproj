@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IImageFileDAL.cs" />
     <Compile Include="Abstract\IMessageDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IRoleDAL.cs" />
     <Compile Include="Abstract\ISkillDAL.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="EntityFramework\EfHeadingDAL.cs" />
     <Compile Include="EntityFramework\EFImageFileDAL.cs" />
     <Compile Include="EntityFramework\EFMessageDAL.cs" />
+    <Compile Include="EntityFramework\EfRoleDAL.cs" />
     <Compile Include="EntityFramework\EFSkillDAL.cs" />
     <Compile Include="EntityFramework\EfWriterDAL.cs" />
     <Compile Include="Migrations\202105241359297_mig_writer_title_add.cs" />
@@ -139,6 +141,14 @@
     <Compile Include="Migrations\202107311336534_skill_updated.designer.cs">
       <DependentUpon>202107311336534_skill_updated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108091205403_IsActive_About.cs" />
+    <Compile Include="Migrations\202108091205403_IsActive_About.designer.cs">
+      <DependentUpon>202108091205403_IsActive_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108101433578_IsRead_Added.cs" />
+    <Compile Include="Migrations\202108101433578_IsRead_Added.designer.cs">
+      <DependentUpon>202108101433578_IsRead_Added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -200,6 +210,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107311336534_skill_updated.resx">
       <DependentUpon>202107311336534_skill_updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108091205403_IsActive_About.resx">
+      <DependentUpon>202108091205403_IsActive_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108101433578_IsRead_Added.resx">
+      <DependentUpon>202108101433578_IsRead_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,6 +10,8 @@ namespace BusinessLayer.Abstract
    public interface IAboutService
    {
         List<About> GetList();
+
+       
         void AboutAdd(About about);
         void AboutDelete(About about);
         void AboutUpdate(About about);

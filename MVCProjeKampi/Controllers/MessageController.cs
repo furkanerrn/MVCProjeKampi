@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete.Repositories;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -15,6 +16,7 @@ namespace MVCProjeKampi.Controllers
     {
         MessageManager mm = new MessageManager(new EFMessageDAL());
         MessageValidator mv = new MessageValidator();
+        Context c = new Context();
 
 
         [Authorize]
@@ -78,11 +80,21 @@ namespace MVCProjeKampi.Controllers
             return View();
         }
 
+        public ActionResult GetUnreadMessages()
+        {
+          
+          
+           var unread = mm.GetUnreadMessages();
+           return View(unread);
+        }
 
-       
+        public ActionResult GetReadMessages()
+        {
 
 
-
+            var read = mm.GetReadMessages();
+            return View(read);
+        }
 
     }
 }

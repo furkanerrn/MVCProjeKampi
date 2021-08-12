@@ -33,12 +33,24 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/Message/GetReadMessages" class="nav-link">
+                        <i class="far fa-envelope"></i> Okunan  Mesajlar
+                        <span class="badge bg-cyan float-md-left">@ViewBag.values2</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Message/GetUnreadMessages" class="nav-link">
+                        <i class="far fa-envelope"></i> Okunmayan  Mesajlar
+                        <span class="badge bg-fuchsia float-md-left">@ViewBag.values</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/Message/GetDraftMessages" class="nav-link">
                         <i class="far fa-file-alt"></i> Taslaklar
                         <span class="badge bg-red float-md-left">@ViewBag.taslak</span>
                     </a>
                 </li>
-               
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="far fa-trash-alt"></i> Çöp Kutusu

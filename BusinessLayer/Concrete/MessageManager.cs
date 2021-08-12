@@ -61,6 +61,16 @@ namespace BusinessLayer.Concrete
             return _messageDAL.Get(x => x.MessageId == id &&x.IsTrash==true);
         }
 
-       
+        public List<Message> GetUnreadMessages()
+        {
+            return _messageDAL.List(x => x.IsRead == false && x.ReceiverMail == "admin@gmail.com");
+
+        }
+
+        public List<Message> GetReadMessages()
+        {
+            return _messageDAL.List(x => x.IsRead == true && x.ReceiverMail == "admin@gmail.com");
+
+        }
     }
 }
