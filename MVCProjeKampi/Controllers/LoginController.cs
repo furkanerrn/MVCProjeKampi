@@ -41,6 +41,41 @@ namespace MVCProjeKampi.Controllers
 
 
         }
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult WriterLogin(Writer p)
+        {
+            Context c = new Context();
+            var writeruserInfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword==p.WriterPassword);
+            if (writeruserInfo!=null)
+            {
+                FormsAuthentication.SetAuthCookie(p.UserName, false);
+                Session["WriterUserName"] = p.UserName;
+                return RedirectToAction("MyContent", "WriterPanelContent");
+            }
+            else
+            {
+                ViewBag.error2 = "Mail veya Parola yanlış. Lütfen tekrar deneyiniz";
+                return View();
+            }
+            
+            //if (_auth.AdminLogin2(p))
+            //{
+            //    FormsAuthentication.SetAuthCookie(p.UserName, false);
+            //    Session["AdminUserName"] = p.UserName;
+            //    return RedirectToAction("Index", "AdminCategory");
+            //}
+            //else
+            //{
+            //    ViewBag.error = "Kullanıcı adı veya Parola yanlış";
+            //    return View();
+            //}
+            //return View();
+        }
 
 
     }
