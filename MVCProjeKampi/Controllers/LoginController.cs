@@ -14,6 +14,7 @@ using EntityLayer.Dto;
 
 namespace MVCProjeKampi.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         IAuthService2 _auth = new AuthManager2(new AdminManager2(new EFAdminDAL2()));
@@ -53,8 +54,9 @@ namespace MVCProjeKampi.Controllers
             var writeruserInfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword==p.WriterPassword);
             if (writeruserInfo!=null)
             {
-                FormsAuthentication.SetAuthCookie(p.UserName, false);
-                Session["WriterUserName"] = p.UserName;
+                FormsAuthentication.SetAuthCookie(p.WriterMail, false);
+              var a=  Session["WriterMail"] = p.WriterMail;
+                ViewBag.mail = a;
                 return RedirectToAction("MyContent", "WriterPanelContent");
             }
             else
@@ -62,7 +64,7 @@ namespace MVCProjeKampi.Controllers
                 ViewBag.error2 = "Mail veya Parola yanlış. Lütfen tekrar deneyiniz";
                 return View();
             }
-            
+
             //if (_auth.AdminLogin2(p))
             //{
             //    FormsAuthentication.SetAuthCookie(p.UserName, false);
@@ -76,7 +78,13 @@ namespace MVCProjeKampi.Controllers
             //}
             //return View();
         }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
+        }
 
-
+       
     }
 }

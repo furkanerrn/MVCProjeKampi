@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concrete.Content
+
+@{
+    ViewBag.Title = "AddContent";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<style>
+    .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 8px;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: #4CAF50;
+    }
+    /* Green */
+    .button2 {
+        background-color: #008CBA;
+    }
+    /* Blue */
+</style>
+<h2>YORUM YAZIN </h2>
+@using (Html.BeginForm("AddContent", "WriterPanelContent", FormMethod.Post))
+{
+      <div class="form-group">
+
+     <input type="hidden" name="HeadingId" value="@ViewBag.id" />
+     
+     @Html.Label("Yorumunuz")
+     @Html.TextAreaFor(x => x.ContentValue,10,30, new { @class = "form-control" })
+     @Html.ValidationMessageFor(x => x.ContentValue)
+     <br />
+     <button class="button button2">Başlığı Oluştur</button>
+
+     </div>
+}

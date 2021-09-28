@@ -1,12 +1,6 @@
-﻿@using EntityLayer.Concrete
+﻿
+@using EntityLayer.Concrete
 @model List<Content>
-@{
-    ViewBag.Title = "MyContent";
-    Layout = "~/Views/Shared/_WriterLayout.cshtml";
-}
-
-
-
 
 
 <!DOCTYPE html>
@@ -22,19 +16,19 @@
                     <div class="col-md-12">
                         <!-- The time line -->
                         <div class="timeline">
-                            @ViewBag.mail
+                           
                             @foreach (var item in Model)
                             {
 
                                 <div class="time-label">
-                                    <span class="bg-success">@(((DateTime)@item.ContentDate).ToString("dd-MMM-yyyy"))</span>
+                                    <span class="bg-success">@(((DateTime)@item.ContentDate).ToString("dd-MMM-yyyy")) - @item.Writer.UserName @item.Writer.WriterSurname</span>
                                 </div>
                                 <!-- /.timeline-label -->
                                 <!-- timeline item -->
                                 <div>
                                     <i class="fas fa-comment bg-yellow"></i>
                                     <div class="timeline-item">
-                                        <h3 class="timeline-header"><a href="#"></a>Başlık : @item.Heading.HeadingName  </h3>
+                                        <h1 class="timeline-header"><a href="#"></a>Başlık : @item.Heading.HeadingName  </h1>
                                         <div class="timeline-body">
                                             @item.ContentValue
                                         </div>

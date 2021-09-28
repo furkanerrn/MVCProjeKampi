@@ -10,15 +10,17 @@ using System.Web.Mvc;
 
 namespace MVCProjeKampi.Controllers
 {
+    
     public class WriterPanelContentController : Controller
     {
         ContentManager cm = new ContentManager(new EfContentDAL());
-        // GET: WriterPanelContent
-        public ActionResult MyContent()
+        
+        Context c = new Context();
+        public ActionResult MyContent(string p)
         {
-            Context c = new Context();
+           
 
-            string p = (string)Session["WriterMail"].ToString(); //tekrar dene
+            p = (string)Session["WriterMail"];
             var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterId).FirstOrDefault();
             var contentvalues = cm.GetListByWriter(writeridinfo);
             return View(contentvalues);
@@ -27,6 +29,32 @@ namespace MVCProjeKampi.Controllers
 
             //var contentvalues = cm.GetListByWriter(writeridinfo);
 
+        }
+
+
+        [HttpGet]
+        public ActionResult AddContent(int id)
+        {
+            ViewBag.id = id;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddContent(Content p)
+        {
+            string mail = (string)Session["WriterMail"];
+            var writeridInfo = c.Writers.Where(x => x.WriterMail == mail).Select(y => y.WriterId).FirstOrDefault();
+
+            p.ContentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            p.WriterId = writeridInfo;
+            p.ContentStatus = true;
+            cm.ContentAdd(p);
+            return RedirectToAction("MyContent");
+        }
+
+        public ActionResult ToDoList()
+        {
+            return View();
         }
     }
 }

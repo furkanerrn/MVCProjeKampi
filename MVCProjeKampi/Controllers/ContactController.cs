@@ -14,6 +14,7 @@ namespace MVCProjeKampi.Controllers
         ContactManager cm = new ContactManager(new EfContactDAL());
         MessageManager mm = new MessageManager(new EFMessageDAL());
         Context c = new Context();
+       
         public ActionResult Index()
         {
             var contactValues = cm.GetList();

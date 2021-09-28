@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.Repositories;
 using DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,13 @@ namespace MVCProjeKampi.Controllers
 {
     public class ContentController : Controller
     {
+        Context c = new Context();
         ContentManager contentManager = new ContentManager(new EfContentDAL());
         public ContentController()
         {
                 
         }
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
@@ -22,7 +25,9 @@ namespace MVCProjeKampi.Controllers
 
         public ActionResult ContentbyHeading(int id )
         {
+           
             var contentValues = contentManager.GetListByHeadingId(id);
+            
             return View(contentValues);
         }
     }

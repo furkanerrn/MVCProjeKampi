@@ -1,18 +1,16 @@
 ﻿@using EntityLayer.Concrete
-@model List<Heading>
+@using PagedList <!-- Paginge uygun listeleme için eklendi-->
+@using PagedList.Mvc <!-- Paginge uygun listeleme için eklendi -->
+@model PagedList.IPagedList<Heading>
+
 @{
-    ViewBag.Title = "MyHeading";
+    ViewBag.Title = "AllHeading";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
-<h1> @ViewBag.e</h1> -  @ViewBag.d
-
-
-
-
 @{ string color = "";}
 
-
+<link href="~/Content/PagedList.css" rel="stylesheet" /><!-- Content klasöründen pagelist.css i getirince pagelist doğru bir biçimde geliyor-->
 <!DOCTYPE html>
 <html>
 
@@ -21,10 +19,10 @@
 
     <section class="content">
 
-        <!-- Default box -->
+
         <div class="card">
             <div class="card-header">
-                <h class="card-title">Başlık İşlemleri</h>
+                <h2>Tüm başlıklar</h2>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -121,22 +119,16 @@
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="/Content/ContentbyHeading/@item.HeadingId">
+                                    <a class="btn btn-primary btn-sm" href="/Default/Headings/@item.HeadingId">
                                         <i class="fas fa-folder">
                                         </i>
                                         Yazılar
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingId">
+                                    <a class="btn btn-info btn-sm" href="/WriterPanelContent/AddContent/@item.HeadingId">
                                         <i class="fas fa-pencil-alt">
                                         </i>
-                                        Düzenle
+                                        Başlığa Yaz
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="/WriterPanel/DeleteHeading/@item.HeadingId">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Sil
-                                    </a>
-                                    <br />
 
 
 
@@ -156,10 +148,6 @@
     </section>
 </body>
 </html>
-<a href="/WriterPanel/NewHeading/" class="btn btn-primary">Yeni Başlık Ekle</a>
-
-
-
-
-
-
+@Html.PagedListPager((IPagedList)Model,
+p => Url.Action("AllHeading", new { p }))    <!-- /controllerdaki all heading metodunun içindeki parametre ile aynı isme sahip olmalı  -->
+<!-- / p=1 old için p'den sonraki 4 lü ya da 5(Bunları Controller da bizz belirliyoruz)  li bloğu getirir' -->
