@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;  //paging için gerekli 
 using PagedList.Mvc; //paging için gerekli 
+using FluentValidation.Results;
+using BusinessLayer.ValidationRules;
 
 namespace MVCProjeKampi.Controllers
 {
@@ -18,16 +20,45 @@ namespace MVCProjeKampi.Controllers
 
         HeadingManager hm = new HeadingManager(new EfHeadingDAL());
         CategoryManager cm = new CategoryManager(new EfCategoryDAL());
+        WriterManager wm = new WriterManager(new EfWriterDAL());
+        WriterValidator wv = new WriterValidator();
+
+        //Üstteki 3 metodu kullanaarak SOLID'i ezdik.Bunu düzelteceğiz.
+
         Context c = new Context();
 
-        int id; 
 
-        public ActionResult WriterProfile()
+        [HttpGet]
+        public ActionResult WriterProfile(int id=0)
         {
+            string p = (string)Session["WriterMail"];
+            id = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterId).FirstOrDefault();
+            var writervalue = wm.getById(id);
+            return View(writervalue);
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer writer)
+        {
+            ValidationResult res = wv.Validate(writer);
+           
+            if (res.IsValid)
+            {
+                wm.WriterUpdate(writer);
+                return RedirectToAction("AllHeading","WriterPanel");
+            }
+            else
+            {
+                foreach (var item in res.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
             return View();
         }
 
-        
+
         public ActionResult MyHeading(string p)
         {
            

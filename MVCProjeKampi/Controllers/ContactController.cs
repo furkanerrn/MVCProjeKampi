@@ -32,10 +32,10 @@ namespace MVCProjeKampi.Controllers
             var contact = cm.GetList().Count();
             ViewBag.contact = contact;
 
-            var sendMail = mm.GetListSendBox().Count();
+            var sendMail = mm.GetListSendBox("furkan@gmail.com").Count();
             ViewBag.sendMail = sendMail;
 
-            var receiverMail = mm.GetListInBox().Count();
+            var receiverMail = mm.GetListInBox("furkan@gmail.com").Count();
             ViewBag.receiverMail = receiverMail;
 
             var taslak = mm.IsDraft().Count();

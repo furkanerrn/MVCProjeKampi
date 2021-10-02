@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MVCProjeKampi.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -28,6 +29,12 @@ namespace MVCProjeKampi.Controllers
         }
 
         public ActionResult Test()
+        {
+            return View();
+     
+        }
+
+        public ActionResult HomePage()
         {
             return View();
         }

@@ -17,6 +17,7 @@ namespace MVCProjeKampi.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
+        WriterLoginManager wm = new WriterLoginManager(new EfWriterDAL());
         IAuthService2 _auth = new AuthManager2(new AdminManager2(new EFAdminDAL2()));
         // GET: Login
         [HttpGet]
@@ -24,6 +25,7 @@ namespace MVCProjeKampi.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Index(AdminDto dto)
         {
@@ -50,8 +52,11 @@ namespace MVCProjeKampi.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer p)
         {
-            Context c = new Context();
-            var writeruserInfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword==p.WriterPassword);
+            //Context c = new Context();
+            //var writeruserInfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword==p.WriterPassword);
+            //Writer Login işlemini Kurumsal Mimariye taşıdık.
+            //
+            var writeruserInfo = wm.GetWriter(p.WriterMail, p.WriterPassword);
             if (writeruserInfo!=null)
             {
                 FormsAuthentication.SetAuthCookie(p.WriterMail, false);
